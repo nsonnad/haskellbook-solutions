@@ -24,9 +24,10 @@ digits x = go x []
          | x >= 10   = go (div x 10) $ (mod x 10):xs
          | otherwise = (mod x 10):xs
 
+-- turn digit into list of english strings
 digitToWords :: Int -> [String]
-digitToWords x = map digitToWord (digits x)
+digitToWords x = map digitToWord $ digits x
 
--- apply first to list from second to get string w interspered hyphens
+-- turn list of english strings into single kebab-cased
 wordNumber :: Int -> String
-wordNumber x = (concat . intersperse "-" . digitToWords) x
+wordNumber = concat . intersperse "-" . digitToWords
