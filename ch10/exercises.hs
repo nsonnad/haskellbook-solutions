@@ -1,0 +1,2 @@
+-- come back to this if I get confused with folds... but these exercises are
+-- tremendously boring so moving on for now
