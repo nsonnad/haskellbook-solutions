@@ -31,7 +31,7 @@ getNumJars :: JamJar -> Int
 getNumJars (JamJar _ jars) = jars
 
 totalJars :: [JamJar] -> Int
-totalJars js = foldr (+) 0 $ map getNumJars js
+totalJars = foldr (+) 0 . map getNumJars
 
 -- 7.
 mostRow :: [JamJar] -> JamJar
