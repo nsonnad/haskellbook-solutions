@@ -1,3 +1,4 @@
+-- 1.
 module Jammin where
 
 import Data.List
@@ -9,12 +10,14 @@ data Fruit =
   | Plum
   deriving (Eq, Show, Ord)
 
+-- 2.
 data JamJar =
   JamJar { fruit :: Fruit
          , jars :: Int
          }
   deriving (Eq, Show, Ord)
 
+-- 5.
 row1 = JamJar Peach 5
 row2 = JamJar Apple 10
 row3 = JamJar Plum 15
@@ -42,6 +45,6 @@ mostRow (j:js) =
 compareKind :: JamJar -> JamJar -> Ordering
 compareKind (JamJar k _) (JamJar k' _) = compare k k'
 
--- possible to do that lambda in pointfree?
+-- possible to do lambda in pointfree?
 groupJam :: [JamJar] -> [[JamJar]]
 groupJam = groupBy (\ j j' -> compareKind j j' == EQ) . sortBy compareKind
