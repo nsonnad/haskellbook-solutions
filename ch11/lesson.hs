@@ -44,3 +44,25 @@ getManu :: Vehicle -> Maybe Manufacturer
 getManu (Car m _) = Just m
 getManu _         = Nothing
 
+
+data Fiction = Fiction deriving Show
+data Nonfiction = Nonfiction deriving Show
+
+data BookType = FictionBook Fiction
+              | NonfictionBook Nonfiction
+              deriving Show
+
+data Sum a b =
+    First a
+  | Second b
+  deriving (Eq, Show)
+
+data Twitter =
+  Twitter deriving (Eq, Show)
+
+data AskFm =
+  AskFm deriving (Eq, Show)
+
+socialNetwork :: Sum Twitter AskFm
+socialNetwork = First Twitter
+
